@@ -1,7 +1,7 @@
 {
   "name": "dhkea.js",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "LGPL-2.1-only",
   "scripts": {
     "generate": "ts-node ./src/boot/processPrimes.ts",

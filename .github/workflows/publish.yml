@@ -24,7 +24,7 @@ jobs:
     
   publish:
     needs: test
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: use Node.js 17.6

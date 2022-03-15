@@ -1,6 +1,6 @@
 import './libs/extends';
 import { cases } from './constants/randTestCases';
-import { randomBigint } from '../src/utils';
+import { randomBigint } from '../dist/utils';
 
 describe('suite.function.correctness.fixed_input|randomBigInt', () => {
   test.each(cases)(

@@ -1,10 +1,6 @@
 import './libs/extends';
-import { quickPowMod } from '../src/utils';
-import groups from '../src/data/primes.json';
-
 import { randMax } from './libs/utils';
-
-const MAX = 1 << 52;
+import { quickPowMod } from '../dist/utils';
 
 class QuickPowModTestCase {
   x: bigint;

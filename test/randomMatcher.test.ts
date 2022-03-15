@@ -1,5 +1,5 @@
 import './libs/extends';
-import {cases} from './constants/randTestCases';
+import { cases } from './constants/randTestCases';
 
 describe('suite.meta.matcher|toBeRandom', () => {
   const goodGenerator = (x: bigint) =>
@@ -7,7 +7,6 @@ describe('suite.meta.matcher|toBeRandom', () => {
   const badGenerator = (x: bigint) =>
     BigInt(Math.floor(parseFloat(Math.random().toFixed(1)) * Number(x)));
 
-  
   test.each(cases)(
     'test.meta.matcher.pass|toBeRandom|goodGenerator|%i',
     (upperBound) => {
@@ -25,9 +24,7 @@ describe('suite.meta.matcher|toBeRandom', () => {
   test.each(cases)(
     'test.meta.matcher.notpass|toBeRandom|goodGenerator|%i',
     (upperBound) => {
-      expect(() =>
-        expect(goodGenerator).not.toBeRandom(upperBound)
-      ).toThrow();
+      expect(() => expect(goodGenerator).not.toBeRandom(upperBound)).toThrow();
     }
   );
 });

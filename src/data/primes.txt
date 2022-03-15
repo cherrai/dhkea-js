@@ -3,7 +3,7 @@
 # 
 # Format:
 # <id>
-# <digits>
+# <bit length>
 # <generator>
 # <hexadecimal prime value - 1st line>
 # <hexadecimal prime value - 2nd line>

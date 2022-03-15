@@ -2,26 +2,26 @@ import rawGroups from './data/primes.json';
 import { quickPowMod, randomBigint } from './utils';
 
 export type ModpGroupId = 1 | 2 | 5 | 14 | 15 | 16 | 17 | 18;
+export type ModpBitLen = 768 | 1024 | 1536 | 2048 | 3072 | 4096 | 6144 | 8192;
 
 const groups = Object.fromEntries(
-  Object.entries(rawGroups).map(([id, group]) => [
-    id,
+  Object.entries(rawGroups).map(([bitLen, group]) => [
+    group.bitLen,
     {
       id: group.id,
       generator: BigInt(group.generator),
-      digits: group.digits,
+      bitLen: group.bitLen,
       prime: BigInt(group.prime),
     },
   ])
 );
 
-
-export function getModpGroupInfo(id: ModpGroupId = 14) {
-  return groups[id];
+export function getModpGroupInfo(bitLen: ModpBitLen = 2048) {
+  return groups[bitLen];
 }
 
-export function generateIndividualKey(id: ModpGroupId = 14) {
-  const { generator, prime } = getModpGroupInfo(id);
+export function generateIndividualKey(digits: ModpBitLen = 2048) {
+  const { generator, prime } = getModpGroupInfo(digits);
   const privateKey = randomBigint(prime);
   return {
     privateKey,
@@ -32,8 +32,8 @@ export function generateIndividualKey(id: ModpGroupId = 14) {
 export function getSharedKey(
   myPrivateKey: bigint,
   theirPublicKey: bigint,
-  id: ModpGroupId = 14
+  bitLen: ModpBitLen = 2048
 ) {
-  const { prime } = getModpGroupInfo(id);
+  const { prime } = getModpGroupInfo(bitLen);
   return quickPowMod(theirPublicKey, myPrivateKey, prime);
 }

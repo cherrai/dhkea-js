@@ -15,10 +15,10 @@ async function main() {
       .map((groupStr) => groupStr.split('\n').filter((line) => line !== ''))
       .filter((group) => group.length >= 3)
       .map((group) => [
-        group[0],
+        group[1],
         {
           id: group[0],
-          digits: group[1],
+          bitLen: group[1],
           generator: group[2],
           prime: BigInt('0x' + group.slice(3).join('').replaceAll(' ', '')),
         },

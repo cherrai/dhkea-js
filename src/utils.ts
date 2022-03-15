@@ -1,9 +1,9 @@
 /** Calculates x, x ** 2, x ** 4, x ** 8, ... x ** (2 ** (digit-1)) */
-export function expTable(x: bigint, digit: number, p: bigint) {
+export function expTable(x: bigint, len: number, p: bigint) {
   const result: bigint[] = [x];
   for (
     let cur = x, i = 1;
-    i < digit;
+    i < len;
     i++, cur = (cur * cur) % p, result.push(cur)
   );
   return result;

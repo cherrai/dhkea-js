@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "outDir": "./dist",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "module": "commonjs",
+    "noEmit": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "incremental": true,
@@ -15,6 +15,6 @@
     "experimentalDecorators": true,
   },
   "include": [
-    "src/**/*"
+    "test/**/*"
   ]
 }

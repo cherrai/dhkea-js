@@ -1,10 +1,6 @@
 interface CustomMatchers<R = unknown> {
   toBeBigInt(value: bigint): R;
-  toBeRandom(
-    upperBound: bigint,
-    count: number = 8192,
-    eps: number = 0.01
-  );
+  toBeRandom(upperBound: bigint, count?: number, eps?: number);
 }
 
 declare namespace jest {

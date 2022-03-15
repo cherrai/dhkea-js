@@ -5,6 +5,9 @@
   "license": "LGPL-2.1-only",
   "scripts": {
     "generate": "ts-node ./src/boot/processPrimes.ts",
+    "clean": "rm ./src/data/primes.json 2>/dev/null || true && rm -rf ./dist 2>/dev/null",
+    "clean_all": "yarn clean || true && rm -rf ./node_modules 2>/dev/null",
+    "build": "yarn clean || true && yarn generate && tsc",
     "test": "jest",
     "test_log": "jest --verbose >./.jestlog 2>&1"
   },

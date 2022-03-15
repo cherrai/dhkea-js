@@ -26,6 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm config ls
+    - run: cat ~/.npmrc
     - run: yarn
     - run: yarn build
     - run: yarn test

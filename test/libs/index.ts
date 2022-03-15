@@ -1,5 +1,5 @@
 import { randomBigint } from '../src/utils';
-import { generateIndividualKey, getSharedKey } from '../index';
+import { generateIndividualKey, getSharedKey } from '../src/index';
 
 function randomBigintTester(n: bigint) {
   function freq(rate: number, result: number[], range: number) {

@@ -1,5 +1,5 @@
-import rawGroups from './src/data/primes.json';
-import { quickPowMod, randomBigint } from './src/utils';
+import rawGroups from './data/primes.json';
+import { quickPowMod, randomBigint } from './utils';
 
 export type ModpGroupId = 1 | 2 | 5 | 14 | 15 | 16 | 17 | 18;
 
@@ -16,12 +16,12 @@ const groups = Object.fromEntries(
 );
 
 
-export function getOakleyGroupInfo(id: ModpGroupId = 14) {
+export function getModpGroupInfo(id: ModpGroupId = 14) {
   return groups[id];
 }
 
 export function generateIndividualKey(id: ModpGroupId = 14) {
-  const { generator, prime } = getOakleyGroupInfo(id);
+  const { generator, prime } = getModpGroupInfo(id);
   const privateKey = randomBigint(prime);
   return {
     privateKey,
@@ -34,6 +34,6 @@ export function getSharedKey(
   theirPublicKey: bigint,
   id: ModpGroupId = 14
 ) {
-  const { prime } = getOakleyGroupInfo(id);
+  const { prime } = getModpGroupInfo(id);
   return quickPowMod(theirPublicKey, myPrivateKey, prime);
 }

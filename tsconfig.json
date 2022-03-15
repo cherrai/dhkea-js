@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "types": ["node"],
     "outDir": "./dist",
     "allowJs": true,
     "skipLibCheck": true,

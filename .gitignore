@@ -1,3 +1,5 @@
+.jestlog
 node_modules
 primes.json
 /dist
+/test/coverage

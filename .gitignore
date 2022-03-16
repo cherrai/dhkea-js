@@ -1,4 +1,5 @@
 .jestlog
+package.lock.json
 node_modules
 primes.json
 /dist

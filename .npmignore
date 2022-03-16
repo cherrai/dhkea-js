@@ -1,0 +1,12 @@
+.jestlog
+jest.config.ts
+.npmignore
+.gitignore
+tsconfig.json
+tsconfig.test.json
+yarn.lock
+package.lock.json
+/src
+/node_modules
+/.github
+/.git

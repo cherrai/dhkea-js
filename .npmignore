@@ -7,6 +7,7 @@ tsconfig.test.json
 yarn.lock
 package.lock.json
 /src
+/test
 /node_modules
 /.github
 /.git

@@ -1,4 +1,4 @@
-/** Calculates x, x ** 2, x ** 4, x ** 8, ... x ** (2 ** (digit-1)) */
+/** Calculates x, x ** 2, x ** 4, x ** 8, ... x ** (2 ** (len-1)) */
 export function expTable(x: bigint, len: number, p: bigint) {
   const result: bigint[] = [x];
   for (
@@ -44,9 +44,9 @@ export function randomBigint(x: bigint) {
           let r = 1,
             k = Math.min(xBin.length - i, 30);
           for (let j = i; j < i + k; j++, r = (r << 1) | xBin[j]);
-          const currentDigit = Math.random() < (1 << k) / r ? 0 : 1;
-          samePrefix = currentDigit === xBin[i];
-          result.push(currentDigit);
+          const currentBit = Math.random() < (1 << k) / r ? 0 : 1;
+          samePrefix = currentBit === xBin[i];
+          result.push(currentBit);
         })();
   }
   return BigInt('0b' + result.join(''));

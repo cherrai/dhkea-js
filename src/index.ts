@@ -20,8 +20,8 @@ export function getModpGroupInfo(bitLen: ModpBitLen = 2048) {
   return groups[bitLen];
 }
 
-export function generateIndividualKey(digits: ModpBitLen = 2048) {
-  const { generator, prime } = getModpGroupInfo(digits);
+export function generateIndividualKey(bitLen: ModpBitLen = 2048) {
+  const { generator, prime } = getModpGroupInfo(bitLen);
   const privateKey = randomBigint(prime);
   return {
     privateKey,

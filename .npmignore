@@ -6,8 +6,9 @@ tsconfig.json
 tsconfig.test.json
 yarn.lock
 package.lock.json
-/src
-/test
-/node_modules
-/.github
-/.git
+src
+test
+node_modules
+.github
+.git
+tsconfig.tsbuildinfo

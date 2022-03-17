@@ -31,11 +31,10 @@ jobs:
     - name: use Node.js 17.6
       uses: actions/setup-node@v3
       with:
-        always-auth: true
         node-version: 17.6
         cache: 'npm'
     - run: yarn
     - run: yarn build
-    - run: yarn publish --registry=https://registry.npm.aiiko.club/
+    - run: npm publish --registry=https://registry.npm.aiiko.club/
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_PRIVATE_AUTH_TOKEN }}

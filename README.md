@@ -8,6 +8,18 @@ A high performance javascript implementation of Diffie–Hellman Key Exchange al
 - :rabbit: Support both Node.JS and browser side
 - :rabbit: Full typescript support is provided
 
+## Installation
+
+```bash
+npm install dhkea-js
+```
+
+If you are using yarn, you can use
+```bash
+yarn add dhkea-js
+```
+instead.
+
 ## Usage
 
 ```javascript

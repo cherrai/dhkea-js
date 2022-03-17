@@ -1,6 +1,6 @@
 {
   "name": "dhkea-js",
-  "version": "0.9.3",
+  "version": "1.0.0",
   "author": "Yuki",
   "main": "dist/index.js",
   "license": "LGPL-2.1-only",

@@ -11,7 +11,6 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x, 17.6]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -37,6 +36,14 @@ jobs:
 
     - run: yarn
     - run: yarn build
+
+    - uses: actions/setup-node@v3
+      with:
+        registry-url: https://registry.npmjs.org/
+        always-auth: true
+    - run: yarn publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
     - uses: actions/setup-node@v3
       with:

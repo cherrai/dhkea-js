@@ -28,13 +28,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+
     - name: use Node.js 17.6
       uses: actions/setup-node@v3
       with:
         node-version: 17.6
         cache: 'npm'
+
     - run: yarn
     - run: yarn build
-    - run: npm publish --registry=https://registry.npm.aiiko.club/
+
+    - uses: actions/setup-node@v3
+      with:
+        registry-url: https://registry.npm.aiiko.club/
+        always-auth: true
+    - run: yarn publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_PRIVATE_AUTH_TOKEN }}

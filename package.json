@@ -4,12 +4,12 @@
   "author": "Yuki",
   "main": "dist/index.js",
   "license": "LGPL-2.1-only",
-  "repository": "github:MetahorizonLab/dhkea-js",
+  "repository": "github:cherrai/dhkea-js",
   "description": "A high performance javascript implementation of Diffie–Hellman Key Exchange algorithm. Dhkea.JS implements all MODP groups defined in RFC2409 and RFC3526.",
   "bugs": {
-    "url": "https://github.com/MetahorizonLab/dhkea-js/issues"
+    "url": "https://github.com/cherrai/dhkea-js/issues"
   },
-  "homepage": "https://github.com/MetahorizonLab/dhkea-js",
+  "homepage": "https://github.com/cherrai/dhkea-js",
   "scripts": {
     "generate": "ts-node ./src/boot/processPrimes.ts",
     "clean": "rm ./src/data/primes.json 2>/dev/null || true && rm -rf ./dist 2>/dev/null",
